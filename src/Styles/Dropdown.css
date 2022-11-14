@@ -1,0 +1,9 @@
+.options-div__wrapper select {
+  height: 100%;
+  font-weight: bold;
+  outline: none;
+}
+
+.options-div__wrapper select option {
+  font-weight: 500;
+}
