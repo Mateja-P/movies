@@ -102,7 +102,6 @@ function Home() {
         <h2 className='popular-section__text'>Popular movies For You</h2>
         <Popular />
       </div>
-      <div style={{ height: '200px' }}></div>
     </>
   );
 }

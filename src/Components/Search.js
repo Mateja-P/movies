@@ -58,7 +58,6 @@ function Search() {
                 inputRef.current.value = '';
                 setMovieRes([]);
                 setShowRes([]);
-                location.reload();
               }}
               className='link__wrapper'
               key={index}
@@ -87,7 +86,6 @@ function Search() {
                 setQuery('');
                 setMovieRes([]);
                 setShowRes([]);
-                location.reload();
               }}
               className='link__wrapper'
               key={index}

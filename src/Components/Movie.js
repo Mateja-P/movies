@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import nextArrow from '../Images/nextArrow.svg';
 import prevArrow from '../Images/prevArrow.svg';
@@ -9,8 +9,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../Styles/Movie.css';
-
-//Homepage
 
 function Movie() {
   const param = useParams();
@@ -59,7 +57,7 @@ function Movie() {
     getMovieDetails(movieId);
     getReviews(movieId);
     getSimilarMovies(movieId);
-  }, []);
+  }, [param]);
 
   function PrevArrow() {
     return (
@@ -247,7 +245,12 @@ function Movie() {
                         <div className='similar-movie-info__div'>
                           <h2>{similar.title}</h2>
                           <p>{similar.overview.substring(0, 90) + '...'}</p>
-                          <a href={`/movie/${similar.id}`}>See more</a>
+                          <Link
+                            to={`/movie/${similar.id}`}
+                            onClick={() => window.scrollTo(0, 0)}
+                          >
+                            See more
+                          </Link>
                         </div>
                       </div>
                     );
